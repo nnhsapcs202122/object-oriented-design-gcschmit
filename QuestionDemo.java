@@ -11,18 +11,24 @@ public class QuestionDemo
 
       Question q = new FillInQuestion("The inventor of Java is _James Gosling_.");
 
-      System.out.println( q );
+      /* System.out.println( q );
       System.out.print("Your answer: ");
       String response = in.nextLine();
-      System.out.println(q.checkAnswer(response));
+      System.out.println(q.checkAnswer(response)); */
       
       ChoiceQuestion q2 = new ChoiceQuestion("Who founded Apple?");
       q2.addChoice("Bill Gates", false);
       q2.addChoice("Steve Jobs", true);
-      System.out.println( q2 );
+      
+      /* System.out.println( q2 );
       System.out.print("Your answer: ");
       response = in.nextLine();
-      System.out.println(q2.checkAnswer(response));
+      System.out.println(q2.checkAnswer(response)); */
+      
+      Exam exam = new Exam();
+      exam.addQuestion(q);
+      exam.addQuestion(q2);
+      exam.askQuestions();
    }
 }
 
