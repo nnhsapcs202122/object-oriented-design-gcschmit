@@ -38,6 +38,6 @@ public class Country implements Measurable
    @Override
    public double getMeasure() 
    {
-      return area;
+      return this.getArea();
    }
 }

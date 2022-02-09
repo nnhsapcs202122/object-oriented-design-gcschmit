@@ -53,6 +53,6 @@ public class BankAccount implements Measurable
    @Override
    public double getMeasure()
    {
-      return balance;
+      return this.getBalance();
    }
 }

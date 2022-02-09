@@ -25,7 +25,7 @@ public class CoinTest
         list.add(nickel);
 
         System.out.println(list);
-        //Collections.sort(list);
-        //System.out.println(list);
+        Collections.sort(list);
+        System.out.println(list);
     }
 }
