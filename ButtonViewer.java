@@ -19,15 +19,22 @@ public class ButtonViewer
     private JFrame frame;
     private JPanel panel;
     private JButton button;
+    private JLabel label;
+    private int clickCount;
     
     public ButtonViewer()
     {
+        this.clickCount = 0;
+        
         // 1. define and setup the UI components
         this.frame = new JFrame();
         this.panel = new JPanel();
         
         this.button = new JButton("Click Me!");
         this.panel.add(this.button);
+        
+        this.label = new JLabel("0 clicks");
+        this.panel.add(this.label);
         
         this.frame.add(this.panel);
         
