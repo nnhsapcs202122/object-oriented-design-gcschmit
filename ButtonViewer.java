@@ -18,20 +18,25 @@ public class ButtonViewer
 
     private JFrame frame;
     private JPanel panel;
-    private JButton button;
+    private JButton buttonA;
+    private JButton buttonB;
     private JLabel label;
-    private int clickCount;
+    private int clickCountA;
+    private int clickCountB;
 
     public ButtonViewer()
     {
-        this.clickCount = 0;
+        this.clickCountA = 0;
+        this.clickCountB = 0;
 
         // 1. define and setup the UI components
         this.frame = new JFrame();
         this.panel = new JPanel();
 
-        this.button = new JButton("Click Me!");
-        this.panel.add(this.button);
+        this.buttonA = new JButton("Click Me!");
+        this.panel.add(this.buttonA);
+        this.buttonB = new JButton("No, Click Me!");
+        this.panel.add(this.buttonB);
 
         this.label = new JLabel("0 clicks");
         this.panel.add(this.label);
@@ -42,7 +47,8 @@ public class ButtonViewer
         ClickListener listener = new ClickListener();
 
         // 3. register listener object with component that generates event
-        this.button.addActionListener(listener);
+        this.buttonA.addActionListener(listener);
+        this.buttonB.addActionListener(listener);
 
         this.frame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
         this.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -58,8 +64,16 @@ public class ButtonViewer
     {
         public void actionPerformed(ActionEvent event)
         {
-            clickCount++;
-            label.setText(clickCount + " clicks");
+            if(event.getSource() == buttonA)
+            {
+                clickCountA++;
+            }
+            else if(event.getSource() == buttonB)
+            {
+                clickCountB++;
+            }
+            
+            label.setText("A: " + clickCountA + "; B: " + clickCountB);
         }
     }
 }
