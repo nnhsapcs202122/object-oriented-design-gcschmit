@@ -23,12 +23,12 @@ public class PersonTester
         Person lastPerson = people[0];
         for(Person person : people)
         {
-            if(firstPerson.compareTo(person) < 0)
+            if(person.compareTo(firstPerson) < 0)
             {
                 firstPerson = person;
             }
             
-            if(lastPerson.compareTo(person) > 0)
+            if(person.compareTo(lastPerson) > 0)
             {
                 lastPerson = person;
             }
